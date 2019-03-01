@@ -1,0 +1,7 @@
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\bin\Debug\CrackShiftago.exe.config
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\bin\Debug\CrackShiftago.exe
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\bin\Debug\CrackShiftago.pdb
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\obj\Debug\CrackShiftago.csprojAssemblyReference.cache
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\obj\Debug\CrackShiftago.csproj.CoreCompileInputs.cache
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\obj\Debug\CrackShiftago.exe
+D:\Programming\Projects\CrackYavalah\CrackShiftago\CrackShiftago\CrackShiftago\obj\Debug\CrackShiftago.pdb
