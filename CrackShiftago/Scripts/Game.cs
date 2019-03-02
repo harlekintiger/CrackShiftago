@@ -14,10 +14,10 @@ namespace CrackShiftago
         {
             board = new Board();
 
-            players = new[]
+            players = new Player[]
             {
-                new Player(1),
-                new Player(2)
+                new HumanPlayer(1),
+                new RandomPlayer(2)
             };
         }
 
@@ -40,9 +40,9 @@ namespace CrackShiftago
 
         private bool GameDraw()
         {
-            if (players[ 0 ].score > players[ 1 ].score)
+            if (players[ 0 ].Score > players[ 1 ].Score)
                 return GameWon(players[ 0 ]);
-            if (players[ 1 ].score > players[ 0 ].score)
+            if (players[ 1 ].Score > players[ 0 ].Score)
                 return GameWon(players[ 1 ]);
 
             Console.WriteLine("Game ended in a draw. To bad ");
