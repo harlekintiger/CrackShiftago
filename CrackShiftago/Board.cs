@@ -63,8 +63,8 @@ namespace CrackShiftago
                 new InputVariation(1, 6,  0, -1),
                 new InputVariation(0, 6,  0, -1),
 
-                new InputVariation(0, 5,  1,  0),
                 new InputVariation(0, 6,  1,  0),
+                new InputVariation(0, 5,  1,  0),
                 new InputVariation(0, 4,  1,  0),
                 new InputVariation(0, 3,  1,  0),
                 new InputVariation(0, 2,  1,  0),
@@ -121,6 +121,8 @@ namespace CrackShiftago
             Buffer.BlockCopy(board, 0, tempBoard, 0, board.Length);
 
             board[ startingCellX, startingCellY ] = newMarble;
+            if (tempBoard[ startingCellX, startingCellY ] == 0)
+                return;
 
             for (int i = 1; i < boardDimension; i++)
             {
@@ -146,10 +148,15 @@ namespace CrackShiftago
             {
                 for (int x = 0; x < boardDimension; x++)
                 {
-                    if (tempBoard[ x, y ] != color)
-                        tempBoard[ x, y ] = 0;
-                    else
+                    if (tempBoard[ x, y ] == color)
                         tempBoard[ x, y ] = 1;
+                    else
+                    {
+                        if(tempBoard[x, y] == 0)
+                            remainingZeros++;
+
+                        tempBoard[ x, y ] = 0;
+                    }
                 }
             }
 
@@ -161,15 +168,12 @@ namespace CrackShiftago
                 int occurrenceCounter = 0;
                 for (int i = 0; i < boardDimension; i++)
                 {
-                    if ((currRow[ i ] = board[ currVariation.xStart + i * currVariation.xDir, currVariation.yStart + i * currVariation.yDir ]) == 1)
+                    if ((currRow[ i ] = tempBoard[ currVariation.xStart + i * currVariation.xDir, currVariation.yStart + i * currVariation.yDir ]) == 1)
                     {
                         occurrenceCounter++;
                     }
                     else
                     {
-                        if (currRow[ i ] == 0)
-                            remainingZeros++;
-
                         if (occurrenceCounter < minScorableRowLength)
                             occurrenceCounter = 0;
                         else
