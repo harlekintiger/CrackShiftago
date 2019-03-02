@@ -6,7 +6,7 @@ namespace CrackShiftago
     {
         private byte color;
 
-        private int score;
+        public int score;
 
         public Player(byte color)
         {

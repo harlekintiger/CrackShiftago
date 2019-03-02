@@ -40,6 +40,11 @@ namespace CrackShiftago
 
         private bool GameDraw()
         {
+            if (players[ 0 ].score > players[ 1 ].score)
+                return GameWon(players[ 0 ]);
+            if (players[ 1 ].score > players[ 0 ].score)
+                return GameWon(players[ 1 ]);
+
             Console.WriteLine("Game ended in a draw. To bad ");
             return false;
         }
