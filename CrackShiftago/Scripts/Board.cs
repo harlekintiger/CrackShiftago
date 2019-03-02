@@ -184,7 +184,8 @@ namespace CrackShiftago
                 if (occurrenceCounter < minScorableRowLength)
                     continue;
 
-                for (int i = (boardDimension / 2) - 1; i > 0; i--)
+                // <Removing middle marbles>
+                for (int i = (boardDimension / 2) - 1; i > 0; i--) // Winning row has to go through the middle spot
                 {
                     if (currRow[ i - 1 ] != 0)
                         currRow[ i ] = 8;
@@ -204,12 +205,14 @@ namespace CrackShiftago
                     if (currRow[ i ] == 8)
                         board[ currVariation.xStart + i * currVariation.xDir, currVariation.yStart + i * currVariation.yDir ] = 0;
                 }
+                // </ Removing middle marbles>
+
 
                 currentScore += (int)pointsForLength[occurrenceCounter];
                 return false;
             }
 
-            if(remainingZeros / 2 < 2)
+            if(remainingZeros < 4)
             {
                 for (int y = 0; y < boardDimension; y++)
                     for (int x = 0; x < boardDimension; x++)
