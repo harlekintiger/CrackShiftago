@@ -1,2 +1,2 @@
 # CrackShiftago
-An AI for the board game shiftago
+Implementation for the board game shiftago (tensorflow AI available in python)
